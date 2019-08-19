@@ -7,8 +7,6 @@ import org.aopalliance.intercept.MethodInvocation;
 import org.springframework.aop.support.StaticMethodMatcherPointcutAdvisor;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.ApplicationEventPublisherAware;
-import org.springframework.core.LocalVariableTableParameterNameDiscoverer;
-import org.springframework.core.ParameterNameDiscoverer;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -27,17 +25,13 @@ public class AopLogService extends StaticMethodMatcherPointcutAdvisor implements
     private ApplicationEventPublisher applicationEventPublisher;
 
 
-    public static final ParameterNameDiscoverer NAME_DISCOVERER = new LocalVariableTableParameterNameDiscoverer();
-
     public AopLogService() {
         this.setAdvice((MethodInterceptor) (methodInvocation) -> {
             Object proceed;
             Log log = this.createLog(methodInvocation);
             try {
                 proceed = methodInvocation.proceed();
-                /**
-                 *
-                 */
+
             } catch (Throwable a) {
                 throw a;
             } finally {

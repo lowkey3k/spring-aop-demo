@@ -35,9 +35,10 @@ public class StudentController {
         return studentService.saveStudent(newStudent.getName(), newStudent.getAge());
     }
 
-    @GetMapping(path = "/")
+    @GetMapping(path = "/getAll")
     @SystemLogger(descrption = "查询学生")
-    public List<Student> getAllStudents() {
+    @ResponseBody
+    public List<Student> getAllStudents() throws Exception {
         return studentService.getAllStudent();
     }
 

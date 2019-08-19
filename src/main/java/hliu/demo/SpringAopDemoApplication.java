@@ -5,9 +5,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jackson.Jackson2ObjectMapperBuilderCustomizer;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.retry.annotation.EnableRetry;
 
 import java.util.TimeZone;
 
@@ -17,10 +17,13 @@ import java.util.TimeZone;
 @SpringBootApplication
 @EnableAspectJAutoProxy
 @EnableJpaRepositories
+@EnableRetry
 public class SpringAopDemoApplication {
 
-    public static void main(String args[]){
-        SpringApplication.run(SpringAopDemoApplication.class,args);
+    public static void main(String args[]) {
+        args = new String[1];
+        args[0] = "***********************################@@@@@@@@@@@@@@@@@@@@@@@@@@";
+        SpringApplication.run(SpringAopDemoApplication.class, args);
     }
 
     @Bean
