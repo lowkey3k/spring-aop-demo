@@ -26,11 +26,11 @@ public class Main {
                 //尝试次数
                         withStopStrategy(StopStrategies.stopAfterAttempt(3)).
                 //注册监听
-                        withRetryListener(new ReListener()).build();
+                        withRetryListener(new MyRetryListener()).build();
         try {
-            Boolean call = retryer.call(new TaskCallable());
+            Boolean call = retryer.call(new MyCallable());
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
 
     }

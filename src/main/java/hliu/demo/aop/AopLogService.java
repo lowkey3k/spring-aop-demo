@@ -1,5 +1,6 @@
 package hliu.demo.aop;
 
+import hliu.demo.controller.request.NewStudentRequest;
 import hliu.demo.model.Log;
 import hliu.demo.util.AopUtil;
 import org.aopalliance.intercept.MethodInterceptor;
@@ -28,10 +29,14 @@ public class AopLogService extends StaticMethodMatcherPointcutAdvisor implements
     public AopLogService() {
         this.setAdvice((MethodInterceptor) (methodInvocation) -> {
             Object proceed;
-            Log log = this.createLog(methodInvocation);
+            Log log = null;
             try {
-                proceed = methodInvocation.proceed();
+                log = this.createLog(methodInvocation);
 
+                proceed = methodInvocation.proceed();
+                if (true) {
+                    return proceed;
+                }
             } catch (Throwable a) {
                 throw a;
             } finally {
@@ -49,16 +54,25 @@ public class AopLogService extends StaticMethodMatcherPointcutAdvisor implements
         Log log = new Log();
         log.setDescp(descrption);
         log.setMethod(method.getName());
+
+
         Object[] arguments = invocation.getArguments();
-        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+        for (Object argument : arguments) {
+            if (argument instanceof NewStudentRequest) {
+                System.out.println("ok----------------");
+            }
+        }
+
+        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes())
+                .getRequest();
         String requestURI = request.getRequestURI();
-       /* StringBuffer stringBuffer=new StringBuffer();
-        Arrays.stream(arguments).forEach(param->{
-            stringBuffer.append(param+"|");
-        });
-        log.setParams(String.valueOf(stringBuffer));*/
+        String method1 = request.getMethod();
         log.setUrl(requestURI);
+        if (true) {
+//            throw new Exception("sfd");
+        }
         return log;
+
     }
 
 

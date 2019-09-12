@@ -1,13 +1,14 @@
 package hliu.demo.guavaretry;
 
 import com.github.rholder.retry.Attempt;
+import com.github.rholder.retry.RetryListener;
 
 /**
  * @author LiHaitao
  * @description MyRetryListener:
  * @date 2019/8/6 11:00
  **/
-public class MyRetryListener extends ReListener {
+public class MyRetryListener implements RetryListener {
 
     @Override
     public <V> void onRetry(Attempt<V> attempt) {

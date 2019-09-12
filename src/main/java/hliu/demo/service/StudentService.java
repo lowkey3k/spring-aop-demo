@@ -1,8 +1,6 @@
 package hliu.demo.service;
 
 
-import com.github.rholder.retry.Retryer;
-import hliu.demo.guavaretry.TaskCallable;
 import hliu.demo.model.Student;
 import hliu.demo.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +16,7 @@ import java.util.List;
 public class StudentService {
     @Autowired
     private StudentRepository studentRepository;
-    @Autowired
-    private Retryer retryer;
+
 
     /*添加学生*/
     public Student saveStudent(String name, Integer age) {
@@ -30,7 +27,6 @@ public class StudentService {
     //    @Retryable(value = Exception.class, maxAttempts = 3, backoff = @Backoff(delay = 2000, multiplier = 1.5))
     public List<Student> getAllStudent() throws Exception {
 
-        retryer.call(new TaskCallable());
         List<Student> id = studentRepository.findAll(Sort.by("id"));
         return id;
     }
