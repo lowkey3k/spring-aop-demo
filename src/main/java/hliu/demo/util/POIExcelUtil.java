@@ -361,7 +361,7 @@
 //     * @param args
 //     * @throws Exception
 //     */
-//    public static void main(String[] args) throws Exception {
+//    public static void collections(String[] args) throws Exception {
 //        List<ArrayList<String>> dataLst = new POIExcelUtil().read("d:/aa.xls");
 //        System.out.println("rowSize:" + dataLst.size());
 //        for (int i = 0; i < dataLst.size(); i++) {

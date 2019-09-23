@@ -1,5 +1,7 @@
 package hliu.demo.arithmetic;
 
+import java.util.Objects;
+
 /**
  * @author LiHaitao
  * @description StringMulti:
@@ -37,26 +39,26 @@ public class StringMulti {
     }
 
     private static String malposition(String source, String now) {
-        if (now == "") {
+        if (Objects.equals(now, "")) {
             return source;
         }
-        String result = "";
+        StringBuilder result = new StringBuilder();
         int ten = 0;
-        result = source.charAt(source.length() - 1) + result;
+        result.insert(0, source.charAt(source.length() - 1));
         int j = now.length() - 1;
         for (int i = source.length() - 2; i >= 0 && j >= 0; i--, j--) {
             int add = Integer.parseInt(source.charAt(i) + "") + Integer.parseInt(now.charAt(j) + "") + ten;
             ten = add / 10;
-            result = add % 10 + result;
+            result.insert(0, add % 10);
         }
         if (j == -1) {
-            result = ten + result;
+            result.insert(0, ten);
         } else {
             int f = Integer.parseInt(source.charAt(0) + "") + ten;
-            result = f + result;
+            result.insert(0, f);
 
         }
-        return result;
+        return result.toString();
     }
 
 
