@@ -50,9 +50,9 @@ public class AopLogService extends StaticMethodMatcherPointcutAdvisor implements
         Method method = invocation.getMethod();
         Object aThis = invocation.getThis();
         SystemLogger methodAnnotation = AopUtil.findMethodAnnotation(aThis.getClass(), method, SystemLogger.class);
-        String descrption = methodAnnotation.descrption();
+        String description = methodAnnotation.description();
         Log log = new Log();
-        log.setDescp(descrption);
+        log.setDescp(description);
         log.setMethod(method.getName());
 
 
@@ -62,15 +62,9 @@ public class AopLogService extends StaticMethodMatcherPointcutAdvisor implements
                 System.out.println("ok----------------");
             }
         }
-
-        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes())
-                .getRequest();
+        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         String requestURI = request.getRequestURI();
-        String method1 = request.getMethod();
         log.setUrl(requestURI);
-        if (true) {
-//            throw new Exception("sfd");
-        }
         return log;
 
     }

@@ -1,5 +1,7 @@
 package hliu.demo.highConcurrency;
 
+import java.text.MessageFormat;
+
 /**
  * @author LiHaitao
  * @description ConcurrencyTest:串行和并发执行累加操作的时间
@@ -30,9 +32,10 @@ public class ConcurrencyTest {
         for (long i = 0; i < count; i++) {
             b--;
         }
+        //使thread线程执行结束，再执行下面的打印
         thread.join();
         long time = System.currentTimeMillis() - start;
-        System.out.println("currency:" + time + "ms,b=" + b);
+        System.out.println(MessageFormat.format("currency:{0}ms,b={1}", time, b));
     }
 
     private static void serial() {

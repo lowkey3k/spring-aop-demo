@@ -39,49 +39,7 @@ public class TwoNumAdd {
         }
         return head.next;
     }
-       /* ListNode node;
-        int temp = 0;
-        int a = l1.val + l2.val;
-        if (a >= 10) {
-            temp = 1;
-        }
-        int a1 = a % 10;
-        node = new ListNode(a1);
-        l1 = l1.next;
-        l2 = l2.next;
-        ListNode head = node;
 
-        while (l1 != null || l2 != null) {
-
-            int a2 = l1.val + l2.val + temp;
-            int a3 = a2 % 10;
-
-            node.next = new ListNode(a3);
-            System.out.println(node.val);
-            node = node.next;
-            temp = 0;
-            if (a2 >= 10) {
-                temp = 1;
-            }
-
-
-            if (l1.next != null) {
-                l1 = l1.next;
-            } else {
-                l1.val = 0;
-            }
-            if (l2.next != null) {
-                l2 = l2.next;
-            } else {
-                l2.val = 0;
-            }
-
-        }
-        if (temp == 1) {
-            node.next = new ListNode(temp);
-        }
-        return head;
-    }*/
 }
 
 
@@ -95,10 +53,7 @@ class ListNode {
 
     @Override
     public String toString() {
-        return "ListNode{" +
-                "val=" + val +
-                ", next=" + next +
-                '}';
+        return "ListNode{" + "val=" + val + ", next=" + next + '}';
     }
 }
 

@@ -22,10 +22,18 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
 
+
+    @GetMapping(path = "/ok")
+    @SystemLogger(description = "查询学生")
+    public String select() {
+        return "ok";
+    }
+
+
     /*使用consumes限定请求格式为表单格式*/
     @PostMapping(path = "/add", consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    @SystemLogger(descrption = "添加学生")
+    @SystemLogger(description = "添加学生")
     public Student addStudentWithoutBindResult(@RequestBody NewStudentRequest newStudent) {
         if (null == newStudent.getName()) {
             throw new CommonException("姓名为空");
@@ -39,16 +47,12 @@ public class StudentController {
         return studentService.saveStudent(newStudent.getName(), newStudent.getAge());
     }*/
 
+
     @GetMapping(path = "/getAll")
-    @SystemLogger(descrption = "查询学生")
+    @SystemLogger(description = "查询学生")
     @ResponseBody
     public List<Student> getAllStudents() throws Exception {
         return studentService.getAllStudent();
     }
 
-    @GetMapping(path = "/ok")
-    @SystemLogger(descrption = "查询学生")
-    public String select() {
-        return "ok";
-    }
 }
