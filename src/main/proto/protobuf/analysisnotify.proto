@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_outer_classname = "AnalysisNotifyProtobuf";
+
+option java_package = "com.kedacom.ctsp.cvf.viid.common.protobuf";
+
+import "src/main/proto/protobuf/kdmotorvehicle.proto";
+import "src/main/proto/protobuf/kdface.proto";
+import "src/main/proto/protobuf/kdnonmotorvehicle.proto";
+import "src/main/proto/protobuf/kdperson.proto";
+import "src/main/proto/protobuf/motorvehicle.proto";
+import "src/main/proto/protobuf/face.proto";
+import "src/main/proto/protobuf/nonmotorvehicle.proto";
+import "src/main/proto/protobuf/person.proto";
+
+message AnalysisNotify_Proto{
+	repeated KDMotorVehicle_Proto	kdmoto = 1;
+	repeated KDFace_Proto	kdface = 2;
+	repeated KDNonMotorVehicle_Proto	kdnonmoto = 3;
+	repeated KDPerson_Proto	kdperson = 4;
+	repeated MotorVehicle_Proto	moto = 5;
+	repeated Face_Proto	face = 6;
+	repeated NonMotorVehicle_Proto	nonmoto = 7;
+	repeated Person_Proto	person = 8;
+}

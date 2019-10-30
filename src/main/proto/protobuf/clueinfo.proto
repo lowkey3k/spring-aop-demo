@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+option java_package = "com.kedacom.ctsp.cvf.viid.common.protobuf";
+
+
+message ClueInfo_Proto{
+	string	ClueID = 1;
+	string	ClueName = 2;
+	int64	ClueTime = 3;
+	string	ClueType = 4;
+	string	ClueDesc = 5;
+	string	PlaceCode = 6;
+	string	PlaceName = 7;
+	int64	ClassifyStatus = 8;
+	int64	ClassifyTime = 9;
+	string	CreatorID = 10;
+	int64	CreateTime = 11;
+	string	VideoIDs = 12;
+	string	ImageIDs = 13;
+	string	MotorVehicleIDs = 14;
+	string	NonMotorVehicleIDs = 15;
+	string	PersonIDs = 16;
+	string	FaceIDs = 17;
+	string	ThingIDs = 18;
+	string	FileIDs = 19;
+	string	SceneIDs = 20;
+	int64	State = 21;
+	string	AuthorizerID = 22;
+	int64	AuthorizeTime = 23;
+	string	AuthorizeOrg = 24;
+	string	AuthorizeMessage = 25;
+	int64	KDExpiredDate = 26;
+	int64	EntryTime = 27;
+}

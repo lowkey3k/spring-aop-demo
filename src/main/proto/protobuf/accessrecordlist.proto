@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "com.kedacom.ctsp.cvf.viid.common.protobuf";
+
+import "src/main/proto/protobuf/accessrecord.proto";
+
+message AccessRecordListObject{
+	repeated AccessRecord_Proto	AccessRecordObject = 1;
+}

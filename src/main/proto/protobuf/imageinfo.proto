@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+option java_package = "com.kedacom.ctsp.cvf.viid.common.protobuf";
+option java_outer_classname = "ImageProtobuf";
+
+import "src/main/proto/protobuf/feature.proto";
+
+message ImageInfo_Proto {
+    string ImageID = 1;
+    int64 InfoKind = 2;
+    string ImageSource = 3;
+    string SourceVideoID = 4;
+    string OriginImageID = 5;
+    int64 EventSort = 6;
+    string DeviceID = 7;
+    string StoragePath = 8;
+    string MountPath = 9;
+    string FileHash = 10;
+    string FileFormat = 11;
+    int64 ShotTime = 12;
+    string Title = 13;
+    string TitleNote = 14;
+    string SpecialIName = 15;
+    string Keyword = 16;
+    string ContentDescription = 17;
+    string SubjectCharacter = 18;
+    string ShotPlaceCode = 19;
+    string ShotPlaceFullAdress = 20;
+    double ShotPlaceLongitude = 21;
+    double ShotPlaceLatitude = 22;
+    int64 HorizontalShotDirection = 23;
+    int64 VerticalShotDirection = 24;
+    int64 SecurityLevel = 25;
+    int64 Width = 26;
+    int64 Height = 27;
+    string CameraManufacturer = 28;
+    string CameraVersion = 29;
+    int64 ApertureValue = 30;
+    int64 ISOSensitivity = 31;
+    int64 FocalLength = 32;
+    string QualityGrade = 33;
+    string CollectorName = 34;
+    string CollectorOrg = 35;
+    string CollectorIDType = 36;
+    string CollectorID = 37;
+    string EntryClerk = 38;
+    string EntryClerkOrg = 39;
+    string EntryClerkIDType = 40;
+    string EntryClerkID = 41;
+    int64 EntryTime = 42;
+    int64 ImageProcFlag = 43;
+    int64 FileSize = 44;
+    repeated Feature_Proto FeatureList = 45;
+    int64 KDExpiredDate = 46;
+    string DeviceType = 47;
+    string DeviceSNNo = 48;
+    string ImeiSn = 49;
+    string APSId = 50;
+    string SelfDefData = 51;
+    string LocalPath = 52;
+    double HorizontalShotAngle = 53;
+    double VerticalShotAngle = 54;
+    string Data = 55;
+}

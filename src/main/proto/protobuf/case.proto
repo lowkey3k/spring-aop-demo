@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_package = "com.kedacom.ctsp.cvf.viid.common.protobuf";
+
+import "src/main/proto/protobuf/caseinfo.proto";
+import "src/main/proto/protobuf/videoslicelist.proto";
+import "src/main/proto/protobuf/imagelist.proto";
+import "src/main/proto/protobuf/facelist.proto";
+import "src/main/proto/protobuf/personlist.proto";
+import "src/main/proto/protobuf/motorvehiclelist.proto";
+import "src/main/proto/protobuf/accessrecordlist.proto";
+import "src/main/proto/protobuf/nonmotorvehiclelist.proto";
+
+message Case_Proto{
+	CaseInfo_Proto	CaseInfo = 1;
+	VideoSliceListObject	VideoSliceList = 2;
+	ImageListObject	ImageList = 3;
+	FaceListObject	FaceList = 4;
+	PersonListObject	PersonList = 5;
+	MotorVehicleListObject	MotorVehicleList = 6;
+	AccessRecordListObject	AccessRecordList = 7;
+	NonMotorVehicleListObject	NonMotorVehicleList = 8;
+}

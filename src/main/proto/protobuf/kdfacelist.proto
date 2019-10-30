@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "com.kedacom.ctsp.cvf.viid.common.protobuf";
+
+import "src/main/proto/protobuf/kdface.proto";
+import "src/main/proto/protobuf/timeconsuming.proto";
+
+message KDFaceList_Proto{
+	repeated KDFace_Proto	KedaFaceObject = 1;
+	int64	TotalNum = 2;
+	repeated TimeConsuming_Proto	TimeConsuming = 3;
+}

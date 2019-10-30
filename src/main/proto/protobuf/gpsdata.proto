@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_package = "com.kedacom.ctsp.cvf.viid.common.protobuf";
+
+
+message GPSData_Proto{
+	string	GPSID = 1;
+	string	DeviceID = 2;
+	int64	SatelliteNo = 3;
+	double	Orientation = 4;
+	int64	Height = 5;
+	double	Longitude = 6;
+	double	Latitude = 7;
+	double	Speed = 8;
+	int64	CurrentTime = 9;
+	string	Positioning = 10;
+	int64	ValidDataMark = 11;
+	int64	SourceType = 12;
+	string	SourceID = 13;
+	int64	KDExpiredDate = 14;
+	int64	EntryTime = 15;
+}

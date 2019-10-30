@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_package = "com.kedacom.ctsp.cvf.viid.common.protobuf";
+
+import "src/main/proto/protobuf/fileinfo.proto";
+import "src/main/proto/protobuf/facelist.proto";
+import "src/main/proto/protobuf/personlist.proto";
+import "src/main/proto/protobuf/motorvehiclelist.proto";
+import "src/main/proto/protobuf/scenelist.proto";
+import "src/main/proto/protobuf/nonmotorvehiclelist.proto";
+
+message File_Proto{
+	string	Data = 1;
+	int64	DataSize = 2;
+	FileInfo_Proto	FileInfo = 3;
+	FaceListObject	FaceList = 4;
+	PersonListObject	PersonList = 5;
+	MotorVehicleListObject	MotorVehicleList = 6;
+	SceneListObject	SceneList = 7;
+	NonMotorVehicleListObject	NonMotorVehicleList = 8;
+}

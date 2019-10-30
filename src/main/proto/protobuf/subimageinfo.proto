@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option java_package = "com.kedacom.ctsp.cvf.viid.common.protobuf";
+
+import "src/main/proto/protobuf/feature.proto";
+
+message SubImageInfo_Proto{
+	string	ImageID = 1;
+	int64	EventSort = 2;
+	string	DeviceID = 3;
+	string	StoragePath = 4;
+	string	Type = 5;
+	string	FileFormat = 6;
+	int64	ShotTime = 7;
+	int64	Width = 8;
+	int64	Height = 9;
+	string	DeviceType = 10;
+	string	DeviceSNNo = 11;
+	string	ImeiSn = 12;
+	string	APSId = 13;
+	string	SelfDefData = 14;
+	string	Data = 15;
+	int64	DataSize = 16;
+	string	LocalPath = 17;
+	string	MountPath = 18;
+	repeated Feature_Proto FeatureList = 19;
+	int64	AlgorithmsStatus = 20;
+	Feature_Proto	FeatureInfoObject = 21;
+}

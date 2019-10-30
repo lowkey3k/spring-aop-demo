@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "com.kedacom.ctsp.cvf.viid.common.protobuf";
+
+import "src/main/proto/protobuf/ape.proto";
+
+message ApeListObject{
+	repeated APE_Proto	APEObject = 1;
+}

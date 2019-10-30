@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option java_package = "com.kedacom.ctsp.cvf.viid.common.protobuf";
+option java_outer_classname = "SubscribeProtobuf";
+
+
+message Subscribe_Proto {
+    string SubscribeID = 1;
+    string Title = 2;
+    string SubscribeDetail = 3;
+    int64 ResourceClass = 4;
+    string ResourceURI = 5;
+    string ApplicantName = 6;
+    string ApplicantOrg = 7;
+    int64 BeginTime = 8;
+    int64 EndTime = 9;
+    string ReceiveAddr = 10;
+    int64 ReportInterval = 11;
+    string Reason = 12;
+    int64 OperateType = 13;
+    int64 SubscribeStatus = 14;
+    string SubscribeCancelOrg = 15;
+    string SubscribeCancelPerson = 16;
+    int64 CancelTime = 17;
+    string CancelReason = 18;
+    string ResultImageDeclare = 19;
+    int64 ResultFeatureDeclare = 20;
+    string TabID = 21;
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_package = "com.kedacom.ctsp.cvf.viid.common.protobuf";
+
+
+message FileInfo_Proto{
+	string	FileID = 1;
+	int64	InfoKind = 2;
+	string	Source = 3;
+	string	FileName = 4;
+	string	StoragePath = 5;
+	string	FileHash = 6;
+	string	FileFormat = 7;
+	string	Title = 8;
+	string	SecurityLevel = 9;
+	string	SubmiterName = 10;
+	string	SubmiterOrg = 11;
+	int64	EntryTime = 12;
+	int64	FileSize = 13;
+}

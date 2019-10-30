@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+option java_package = "com.kedacom.ctsp.cvf.viid.common.protobuf";
+
+import "src/main/proto/protobuf/kdsubimageinfo.proto";
+
+message KDFace_Proto{
+	string	FaceID = 1;
+	int64	InfoKind = 2;
+	string	SourceID = 3;
+	int64	ShotTime = 4;
+	string	DeviceID = 5;
+	int64	LeftTopX = 6;
+	int64	LeftTopY = 7;
+	int64	RightBtmX = 8;
+	int64	RightBtmY = 9;
+	int64	FaceAppearTime = 10;
+	int64	FaceDisAppearTime = 11;
+	int64	SourceType = 12;
+	string	LandMarks = 13;
+	double	Yaw = 14;
+	double	Pitch = 15;
+	double	Roll = 16;
+	string	Quality1 = 17;
+	string	Quality2 = 18;
+	double	Blur = 19;
+	string	Extend1 = 20;
+	string	Extend2 = 21;
+	repeated KDSubImageInfo_Proto	KedaSubImageList = 22;
+	int64	EntryTime = 23;
+	string	TabID = 24;
+	string	AnalysisObjID = 25;
+	string	RelativeTabId = 26;
+	string	RelativeID = 27;
+	int64	HasHat = 28;
+	int64	HasMask = 29;
+	int64	HasGlass = 30;
+	string	RaceCode = 31;
+	string	GenderCode = 32;
+	int64	AgeLowerLimit = 33;
+	int64	AgeUpLimit = 34;
+	double	ShotPlaceLongitude = 35;
+	double	ShotPlaceLatitude = 36;
+	int64	DataType = 37;
+	int64	FaceQuality = 38;
+	int64	KDExpiredDate = 39;
+}

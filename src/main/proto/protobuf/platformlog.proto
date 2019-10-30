@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "com.kedacom.ctsp.cvf.viid.common.protobuf";
+
+
+message PlatformLog_Proto{
+	string	Moudle = 1;
+	string	Node = 2;
+	string	PlatformID = 3;
+	string	PlatformName = 4;
+	string	PlatformIP = 5;
+	string	Description = 6;
+	int64	LogType = 7;
+	int64	TriggerTime = 8;
+	int64	EntryTime = 9;
+	int64	KDExpiredDate = 10;
+}

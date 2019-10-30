@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option java_package = "com.kedacom.ctsp.cvf.viid.common.protobuf";
+
+
+import "src/main/proto/protobuf/imageinfo.proto";
+import "src/main/proto/protobuf/facelist.proto";
+import "src/main/proto/protobuf/personlist.proto";
+import "src/main/proto/protobuf/motorvehiclelist.proto";
+import "src/main/proto/protobuf/accessrecordlist.proto";
+import "src/main/proto/protobuf/illegalrecordlist.proto";
+import "src/main/proto/protobuf/nonmotorvehiclelist.proto";
+import "src/main/proto/protobuf/kdpersonlist.proto";
+import "src/main/proto/protobuf/kdfacelist.proto";
+import "src/main/proto/protobuf/kdmotorvehiclelist.proto";
+
+message Image_Proto {
+    string Data = 1;
+    int64 DataSize = 2;
+    ImageInfo_Proto ImageInfo = 3;
+    FaceListObject FaceList = 4;
+    PersonListObject PersonList = 5;
+    MotorVehicleListObject MotorVehicleList = 6;
+    AccessRecordListObject AccessRecordList = 7;
+    IllegalRecordListObject IllegalRecordList = 8;
+    NonMotorVehicleListObject NonMotorVehicleList = 9;
+    KDPersonList_Proto KedaPersonList = 10;
+    KDFaceList_Proto KedaFaceList = 11;
+    KDMotorList_Proto KedaMotorVehicleList = 12;
+}

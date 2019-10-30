@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option java_package = "com.kedacom.ctsp.cvf.viid.common.protobuf";
+
+
+message RFIDDevice_Proto{
+	string	RFIDDeviceDataID = 1;
+	string	DeviceID = 2;
+	string	DeviceName = 3;
+	string	Model = 4;
+	string	IPAddr = 5;
+	string	IPV6Addr = 6;
+	int64	GPSInfo = 7;
+	double	Longitude = 8;
+	double	Latitude = 9;
+	string	PlaceCode = 10;
+	string	Place = 11;
+	int64	Probeenable = 12;
+	int64	CurrentTime = 13;
+	string	TimeZone = 14;
+	string	APScope = 15;
+	string	WorkPattern = 16;
+	string	DirectionalAngle = 17;
+	string	APCycle = 18;
+	string	DeviceMacAdress = 19;
+	string	CollectorName = 20;
+	string	CollectorOrg = 21;
+	int64	CollectorIDType = 22;
+	string	CollectorID = 23;
+}

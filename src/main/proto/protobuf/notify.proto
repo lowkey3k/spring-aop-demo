@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+option java_package = "com.kedacom.ctsp.cvf.viid.common.protobuf";
+option java_outer_classname = "NotifylistProtobuf";
+
+import "src/main/proto/protobuf/imageinfo.proto";
+import "src/main/proto/protobuf/person.proto";
+import "src/main/proto/protobuf/motorvehicle.proto";
+import "src/main/proto/protobuf/face.proto";
+import "src/main/proto/protobuf/videosliceinfo.proto";
+import "src/main/proto/protobuf/wifidata.proto";
+import "src/main/proto/protobuf/illegalrecord.proto";
+import "src/main/proto/protobuf/lane.proto";
+import "src/main/proto/protobuf/ape.proto";
+import "src/main/proto/protobuf/tollgate.proto";
+import "src/main/proto/protobuf/accessrecord.proto";
+import "src/main/proto/protobuf/gpsdata.proto";
+import "src/main/proto/protobuf/case.proto";
+import "src/main/proto/protobuf/rfiddata.proto";
+import "src/main/proto/protobuf/dataclasstab.proto";
+import "src/main/proto/protobuf/clue.proto";
+import "src/main/proto/protobuf/kdface.proto";
+import "src/main/proto/protobuf/kdperson.proto";
+import "src/main/proto/protobuf/kdmotorvehicle.proto";
+import "src/main/proto/protobuf/nonmotorillegalrecord.proto";
+import "src/main/proto/protobuf/nonmotorvehicle.proto";
+import "src/main/proto/protobuf/timeconsuming.proto";
+
+message Notify_Proto {
+    int64 TriggerTime = 1;
+    string devid = 2;
+    int64 ExecuteOperation = 3;
+    repeated ImageInfo_Proto image = 4;
+    repeated Person_Proto person = 5;
+    repeated MotorVehicle_Proto moto = 6;
+    repeated Face_Proto face = 7;
+    repeated VideoSliceInfo_Proto videoslice = 8;
+    repeated WifiData_Proto wifidataList = 9;
+    repeated IllegalRecord_Proto illegalRecordList = 10;
+    repeated Lane_Proto LaneList = 11;
+    repeated APE_Proto APEList = 12;
+    repeated Tollgate_Proto TollgateList = 13;
+    repeated AccessRecord_Proto AccessRecordList = 14;
+    repeated GPSData_Proto GpsDataList = 15;
+    repeated Case_Proto CaseList = 16;
+    repeated RFIDData_Proto rfiddataList = 17;
+    repeated DataClassTab_Proto DataClassTabObjectList = 18;
+    string SubscribeID = 19;
+    repeated Clue_Proto ClueObjectList = 20;
+    repeated KDFace_Proto KDFace = 21;
+    repeated KDPerson_Proto KDPerson = 22;
+    repeated KDMotorVehicle_Proto KDMotorVehicle = 23;
+    repeated NonMotorIllegalRecord_Proto NonMotorIllegalRecordList = 24;
+    repeated NonMotorVehicle_Proto nonmotor = 25;
+    string UserIdentify = 26;
+    repeated TimeConsuming_Proto TimeConsuming = 27;
+}

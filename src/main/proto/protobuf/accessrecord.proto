@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_package = "com.kedacom.ctsp.cvf.viid.common.protobuf";
+
+import "src/main/proto/protobuf/subimageinfo.proto";
+
+message AccessRecord_Proto{
+	string	AccessRecordID = 1;
+	string	SourceID = 2;
+	string	DeviceID = 3;
+	string	SecureAccessID = 4;
+	string	AlarmEventCode = 5;
+	int64	CardID = 6;
+	int64	CardType = 7;
+	string	PersonCode = 8;
+	int64	AccessTime = 9;
+	string	AccessDesc = 10;
+	int64	PunchAct = 11;
+	int64	PunchResult = 12;
+	int64	PunchTime = 13;
+	int64	EntryTime = 14;
+	repeated SubImageInfo_Proto SubImageList = 15;
+	int64	KDExpiredDate = 16;
+	int64	ShotTime = 17;
+}

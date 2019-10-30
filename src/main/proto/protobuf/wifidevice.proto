@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+option java_package = "com.kedacom.ctsp.cvf.viid.common.protobuf";
+
+import "src/main/proto/protobuf/gpsdata.proto";
+
+message WifiDevice_Proto{
+	string	WifiDeviceDataID = 1;
+	string	DeviceID = 2;
+	string	DeviceName = 3;
+	string	Model = 4;
+	string	IPAddr = 5;
+	string	IPV6Addr = 6;
+	int64	GPSInfo = 7;
+	double	Longitude = 8;
+	double	Latitude = 9;
+	string	PlaceCode = 10;
+	string	Place = 11;
+	int64	WifiProbeenable = 12;
+	int64	CurrentTime = 13;
+	string	TimeZone = 14;
+	string	APScope = 15;
+	string	WorkPattern = 16;
+	string	WirelessDataFrame = 17;
+	string	NetworkAccessType = 18;
+	string	APSendCyc = 19;
+	string	DeviceMacAdress = 20;
+	GPSData_Proto	GPSData = 21;
+	string	CollectorName = 22;
+	string	CollectorOrg = 23;
+	int64	CollectorIDType = 24;
+	string	CollectorID = 25;
+	string	DeviceSNNo = 26;
+	string	APSId = 27;
+	int64	KDExpiredDate = 28;
+	int64	EntryTime = 29;
+}

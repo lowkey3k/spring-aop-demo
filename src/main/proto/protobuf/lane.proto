@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "com.kedacom.ctsp.cvf.viid.common.protobuf";
+option java_outer_classname = "LaneProtobuf";
+
+
+message Lane_Proto {
+    string TollgateID = 1;
+    int64 LaneNo = 2;
+    string Name = 3;
+    int64 Direction = 4;
+    string Desc = 5;
+    double MaxSpeed = 6;
+    int64 CityPass = 7;
+    string ApeID = 8;
+}

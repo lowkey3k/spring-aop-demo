@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "com.kedacom.ctsp.cvf.viid.common.protobuf";
+
+import "src/main/proto/protobuf/imagelist.proto";
+
+message ImageListMsg{
+	ImageListObject	ImageListObject = 1;
+	ImageListObject	ImageList = 2;
+}

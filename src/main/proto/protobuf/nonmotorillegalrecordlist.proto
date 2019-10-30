@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "com.kedacom.ctsp.cvf.viid.common.protobuf";
+
+import "src/main/proto/protobuf/nonmotorillegalrecord.proto";
+
+message NonMotorIllegalRecordListObject{
+	repeated NonMotorIllegalRecord_Proto	NonMotorIllegalRecordObject = 1;
+	int64	TotalNum = 2;
+}

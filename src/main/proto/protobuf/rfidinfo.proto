@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "com.kedacom.ctsp.cvf.viid.common.protobuf";
+
+
+message RFIDInfo_Proto{
+	string	RFIDInfoDataID = 1;
+	string	DeviceID = 2;
+	string	RFIDID = 3;
+	int64	StartTime = 4;
+	int64	EndTime = 5;
+	string	Power = 6;
+	double	Longitude = 7;
+	double	Latitude = 8;
+	string	MacAppearTimes = 9;
+	string	SourceID = 10;
+}

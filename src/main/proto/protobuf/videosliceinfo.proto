@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+option java_package = "com.kedacom.ctsp.cvf.viid.common.protobuf";
+option java_outer_classname = "VideoSlicesProtobuf";
+
+import "src/main/proto/protobuf/subimageinfo.proto";
+
+message VideoSliceInfo_Proto {
+    string VideoID = 1;
+    int64 InfoKind = 2;
+    string VideoSource = 3;
+    int64 IsAbstractVideo = 4;
+    string OriginVideoID = 5;
+    string OriginVideoURL = 6;
+    int64 EventSort = 7;
+    string DeviceID = 8;
+    string StoragePath = 9;
+    string ThumbnailStoragePath = 10;
+    string FileHash = 11;
+    string FileFormat = 12;
+    string CodedFormat = 13;
+    int64 AudioFlag = 14;
+    int64 AudioCodedFormat = 15;
+    string Title = 16;
+    string TitleNote = 17;
+    string SpecialName = 18;
+    string Keyword = 19;
+    string ContentDescription = 20;
+    string MainCharacter = 21;
+    string ShotPlaceCode = 22;
+    string ShotPlaceFullAdress = 23;
+    double ShotPlaceLongitude = 24;
+    double ShotPlaceLatitude = 25;
+    string HorizontalShotDirection = 26;
+    string VerticalShotDirection = 27;
+    string SecurityLevel = 28;
+    double VideoLen = 29;
+    int64 BeginTime = 30;
+    int64 EndTime = 31;
+    int64 TimeErr = 32;
+    int64 Width = 33;
+    int64 Height = 34;
+    string QualityGrade = 35;
+    string CollectorName = 36;
+    string CollectorOrg = 37;
+    string CollectorIDType = 38;
+    string CollectorID = 39;
+    string EntryClerk = 40;
+    string EntryClerkOrg = 41;
+    string EntryClerkIDType = 42;
+    string EntryClerkID = 43;
+    int64 EntryTime = 44;
+    int64 VideoProcFlag = 45;
+    int64 FileSize = 46;
+    string DeviceType = 47;
+    string DeviceSNNo = 48;
+    string ImeiSn = 49;
+    string APSId = 50;
+    string SelfDefData = 51;
+    string MountPath = 52;
+    string LocalPath = 53;
+    int64 Uploading = 54;
+    repeated SubImageInfo_Proto SubImageList = 55;
+    int64 KDExpiredDate = 56;
+    int64 Transcoding = 57;
+}

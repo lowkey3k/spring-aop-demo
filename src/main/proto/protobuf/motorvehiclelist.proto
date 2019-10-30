@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "com.kedacom.ctsp.cvf.viid.common.protobuf";
+
+import "src/main/proto/protobuf/motorvehicle.proto";
+import "src/main/proto/protobuf/timeconsuming.proto";
+
+message MotorVehicleListObject{
+	repeated MotorVehicle_Proto	MotorVehicleObject = 1;
+	repeated TimeConsuming_Proto	TimeConsuming = 2;
+}

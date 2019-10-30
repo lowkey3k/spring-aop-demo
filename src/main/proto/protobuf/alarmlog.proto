@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_package = "com.kedacom.ctsp.cvf.viid.common.protobuf";
+
+
+message AlarmLog_Proto{
+	string	Moudle = 1;
+	string	Node = 2;
+	string	NotificationID = 3;
+	string	DispositionID = 4;
+	string	DispositionCategory = 5;
+	string	InfoIDs = 6;
+	string	Reason = 7;
+	string	ReceiveAddr = 8;
+	string	DeviceID = 9;
+	string	TollgateID = 10;
+	string	TargetID = 11;
+	string	TargetAttr = 12;
+	int64	TriggerTime = 13;
+	string	Description = 14;
+}

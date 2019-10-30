@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "com.kedacom.ctsp.cvf.viid.common.protobuf";
+
+import "src/main/proto/protobuf/facelist.proto";
+import "src/main/proto/protobuf/personlist.proto";
+import "src/main/proto/protobuf/motorvehiclelist.proto";
+import "src/main/proto/protobuf/nonmotorvehiclelist.proto";
+
+message KdDispositionListObject{
+	FaceListObject	FaceListObject = 1;
+	PersonListObject	PersonListObject = 2;
+	MotorVehicleListObject	MotorVehicleListObject = 3;
+	NonMotorVehicleListObject	NonMotorVehicleListObject = 4;
+}
