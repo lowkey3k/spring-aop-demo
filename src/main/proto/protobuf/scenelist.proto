@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-option java_package = "com.kedacom.ctsp.cvf.viid.common.protobuf";
-
-import "src/main/proto/protobuf/scene.proto";
-
-message SceneListObject{
-	repeated Scene_Proto	SceneObject = 1;
-}

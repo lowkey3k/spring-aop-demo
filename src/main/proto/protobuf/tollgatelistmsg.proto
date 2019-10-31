@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-option java_package = "com.kedacom.ctsp.cvf.viid.common.protobuf";
-
-import "src/main/proto/protobuf/tollgatelist.proto";
-
-message TollgateListMsg{
-	TollgateListObject	TollgateListObject = 1;
-}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "com.test.demo";
+option java_outer_classname = "MessageBuf";
+
+
+message Message {
+    string msg = 1; //消息内容
+    int64 type = 2; //消息类型
+    double lon = 3; //经度
+    double lat = 4; //纬度
+
+}

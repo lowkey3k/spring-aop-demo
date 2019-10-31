@@ -6,8 +6,12 @@ package com.demo.collections;
  * @date 2019/10/24 13:17
  **/
 
+import com.google.common.collect.Lists;
+
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * 在一个 m*n 的二维字符串数组中输出二叉树，并遵守以下规则：
@@ -27,8 +31,14 @@ public class PrintTree {
         TreeNode treeNode = new TreeNode(0);
         treeNode.right = new TreeNode(1);
         treeNode.left = new TreeNode(2);
-        treeNode.left.left = new TreeNode(3);
-        System.out.println(getDepth(treeNode));
+        //        treeNode.right.left = new TreeNode(6);
+        //        treeNode.left.left = new TreeNode(3);
+        //        treeNode.left.left.left = new TreeNode(4);
+        //        treeNode.left.left.left.left = new TreeNode(5);
+
+        //        System.out.println(getDepth(treeNode));
+        List<List<String>> lists = printTree(treeNode);
+        //        System.out.println(lists.toString());
     }
 
     /**
@@ -38,16 +48,98 @@ public class PrintTree {
      * @param root
      * @return
      */
-    public List<List<String>> printTree(TreeNode root) {
-        int depth = getDepth(root);
-        int m = (int) (2 * Math.pow(2, (double) depth)) + 1;
-        List<String> row = new ArrayList<>(m);
-        for (int i = 0; i < m; i++) {
-            row.add("");
+    public static List<List<String>> printTree(TreeNode root) {
+        if (root == null) {
+            return Lists.newArrayList();
         }
-        row.add(m / 2, root.val + "");
+        int depth = getDepth(root);
+        int m = (int) (2 * Math.pow(2, (double) depth)) - 1;
+        List<List<String>> result = new ArrayList<>(m + 1);
+        List<String> fillList = new ArrayList<>();
+        for (int i = 0; i < m; i++) {
+            fillList.add("*");
+        }
+        fill(root, m, result);
+        return result;
+    }
 
-        return null;
+    //
+    //    private static void fill(TreeNode root, int start, int end, int m, List<List<String>> result, List<String> fillList) {
+    //        if (root == null || (root.left == null && root.right == null)) {
+    //            return;
+    //        }
+    //        for (int i = 0; i < m; i++) {
+    //            fillList.set(i, "*");
+    //        }
+    //        Queue<TreeNode> queue = new LinkedList<>();
+    //        queue.offer(root);
+    //
+    //        int pa = (start + end / 2) / 2;
+    //        int pb = (end / 2 + end) / 2;
+    //        if (root.left != null)
+    //            fillList.set(pa, root.left.val + "");
+    //        if (root.right != null)
+    //            fillList.set(pb, root.right.val + "");
+    //        fill(root.left, start, end / 2, m, result, fillList);
+    //        fill(root.right, end / 2 + 1, m, m, result, fillList);
+    //        System.out.println(fillList);
+    //        result.add(fillList);
+    //
+    //    }
+
+
+    private static void fill(TreeNode root, int m, List<List<String>> result) {
+        if (root == null) {
+            return;
+        }
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.offer(root);
+        List<String> fillList = new ArrayList<>();
+        for (int i = 0; i < m; i++) {
+            fillList.add("*");
+        }
+        int position = m / 2;
+        fillList.set(position, root.val + "");
+        int pB = m / 2;
+        int a = m;
+        result.add(fillList);
+        System.out.println(fillList);
+        Queue<TreeNode> treeNodeQueue = new LinkedList<TreeNode>();
+        while (!queue.isEmpty() || !treeNodeQueue.isEmpty()) {
+            treeNodeQueue = new LinkedList<TreeNode>();
+            while (!queue.isEmpty()) {
+                treeNodeQueue.offer(queue.poll());
+            }
+
+            List<String> fill = new ArrayList<>();
+            for (int i = 0; i < m; i++) {
+                fill.add("*");
+            }
+            a = a / 2;
+            int pA = (0 + a) / 2;
+            pB = (pB + 1 + m) / 2;
+
+
+            while (!treeNodeQueue.isEmpty()) {
+                TreeNode node = treeNodeQueue.poll();
+                if (node.left != null) {
+                    fill.set(pA, node.left.val + "");
+                }
+                if (node.right != null) {
+                    fill.set(pB, node.right.val + "");
+                }
+                if (node.left != null && (node.left.left != null || node.left.right != null)) {
+                    queue.offer(node.left);
+                }
+                if (node.right != null && (node.right.left != null || node.right.right != null)) {
+                    queue.offer(node.right);
+                }
+            }
+            result.add(fill);
+            System.out.println(fill);
+
+        }
+
     }
 
 

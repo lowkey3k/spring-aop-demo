@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-option java_package = "com.kedacom.ctsp.cvf.viid.common.protobuf";
-
-import "src/main/proto/protobuf/fileinfo.proto";
-
-message FileInfoListObject{
-	repeated FileInfo_Proto	FileInfoObject = 1;
-}
