@@ -20,7 +20,7 @@ public class Recursion {
         node.next = node1;
         System.out.println(node);
 
-        reverseList(node);
+        //        reverseList(node);
         System.out.println(node.next);
     }
 

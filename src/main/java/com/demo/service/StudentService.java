@@ -24,11 +24,9 @@ public class StudentService {
         return studentRepository.save(student);
     }
 
-    //    @Retryable(value = Exception.class, maxAttempts = 3, backoff = @Backoff(delay = 2000, multiplier = 1.5))
-    public List<Student> getAllStudent() throws Exception {
+    public List<Student> getAllStudent() {
 
-        List<Student> id = studentRepository.findAll(Sort.by("id"));
-        return id;
+        return studentRepository.findAll(Sort.by("id"));
     }
 
 

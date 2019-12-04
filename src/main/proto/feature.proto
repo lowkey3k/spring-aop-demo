@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "com.keda.viid.proto";
+
+
+message Feature_Proto{
+	string	Vendor = 1;
+	string	AlgorithmVersion = 2;
+	string	FeatureData = 3;
+}

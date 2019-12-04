@@ -23,8 +23,12 @@ create table t_teacher (
 );
 
 create table t_teacher_student (
+    id bigint auto_increment,
     student_teacher_id bigint not null,
-    students_id bigint not null
+    students_id bigint not null,
+    create_time timestamp,
+    update_time timestamp,
+      primary key (id)
 );
 
 create table t_log(

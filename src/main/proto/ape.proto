@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option java_package = "com.keda.viid.proto";
+option java_outer_classname="APEProtobuf";
+
+message APE_Proto{
+	string	ApeID = 1;
+	string	Name = 2;
+	string	Model = 3;
+	string	IPAddr = 4;
+	string	IPV6Addr = 5;
+	double	Longitude = 6;
+	double	Latitude = 7;
+	string	Place = 8;
+	int64	CapDirection = 9;
+	string	MonitorAreaDesc = 10;
+	string	OwnerApsID = 11;
+	string	UserId = 12;
+	string	Password = 13;
+	int64	Port = 14;
+	string	PlaceCode = 15;
+	string	OrgCode = 16;
+	string	MonitorDirection = 17;
+	string	IsOnline = 18;
+	string	FunctionType = 19;
+	string	PositionType = 20;
+	string	OriginID = 21;
+}

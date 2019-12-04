@@ -52,6 +52,8 @@ public class StudentController {
     @SystemLogger(description = "查询学生")
     @ResponseBody
     public List<Student> getAllStudents() throws Exception {
+
+
         return studentService.getAllStudent();
     }
 

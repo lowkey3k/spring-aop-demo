@@ -144,7 +144,7 @@
 //        }
 //        InputStream in = null;
 //        try {
-//            in = FileUtil.class.getResourceAsStream("/application.properties");
+//            in = FileUtil.class.getResourceAsStream("/application.yml");
 //            properties = new Properties();
 //            properties.load(in);
 //            return properties.getProperty(key);
