@@ -3,7 +3,7 @@ package com.demo.model;
 import lombok.Data;
 
 @Data
-public class TeacherStudentVO {
+public class TeacherStudentVO extends BaseVO<TeacherStudent> {
 
 
     private Long studentTeacherId;
@@ -17,5 +17,6 @@ public class TeacherStudentVO {
     private String teacherName;
 
     private Integer teacherAge;
+
 
 }

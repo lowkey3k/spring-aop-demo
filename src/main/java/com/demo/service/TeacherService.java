@@ -16,7 +16,7 @@ import java.util.List;
  * Created by Administrator on 2019/7/26.
  */
 @Service
-public class TeacherService {
+public class TeacherService implements QueryService<Teacher, Long> {
 
     @Autowired
     private TeacherRepository teacherRepository;
@@ -35,5 +35,10 @@ public class TeacherService {
     /*按照Id排序并返回所有教师*/
     public List<Teacher> getAll() {
         return teacherRepository.findAll(Sort.by("id"));
+    }
+
+    @Override
+    public Teacher findById(Long id) {
+        return teacherRepository.getOne(id);
     }
 }

@@ -1,6 +1,10 @@
 package com.demo.controller;
 
-import com.demo.model.TeacherStudent;
+import com.demo.aop.DimensionPadding;
+import com.demo.aop.DimensionPaddingList;
+import com.demo.model.TeacherStudentVO;
+import com.demo.service.StudentService;
+import com.demo.service.TeacherService;
 import com.demo.service.TeacherStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +26,17 @@ public class Test {
     private TeacherStudentService service;
 
     @RequestMapping("/test")
-    public List<TeacherStudent> createData() {
+    @DimensionPaddingList({
+            @DimensionPadding(field = "studentsId", fieldAs = "id", name = "studentName", nameAs = "name", service = StudentService.class)
+            ,
+            @DimensionPadding(field = "studentTeacherId", fieldAs = "id", name = "teacherName", nameAs = "name", service = TeacherService.class)
+            ,
+            @DimensionPadding(field = "studentsId", fieldAs = "id", name = "studentAge", nameAs = "age", service = StudentService.class)
+            ,
+            @DimensionPadding(field = "studentTeacherId", fieldAs = "id", name = "teacherAge", nameAs = "age", service = TeacherService.class)
+    }
+    )
+    public List<TeacherStudentVO> createData() {
         return service.getAll();
     }
 }

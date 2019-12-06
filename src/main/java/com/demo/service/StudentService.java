@@ -13,7 +13,7 @@ import java.util.List;
  * Created by Administrator on 2019/7/26.
  */
 @Service
-public class StudentService {
+public class StudentService implements QueryService<Student, Long> {
     @Autowired
     private StudentRepository studentRepository;
 
@@ -50,4 +50,8 @@ public class StudentService {
         return studentRepository.getOne(id);
     }
 
+    @Override
+    public Student findById(Long id) {
+        return studentRepository.getOne(id);
+    }
 }

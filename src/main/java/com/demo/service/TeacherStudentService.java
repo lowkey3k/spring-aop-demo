@@ -4,11 +4,13 @@ import cn.hutool.core.util.RandomUtil;
 import com.demo.model.Student;
 import com.demo.model.Teacher;
 import com.demo.model.TeacherStudent;
+import com.demo.model.TeacherStudentVO;
 import com.demo.repository.StudentTeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author LiHaitao
@@ -16,7 +18,7 @@ import java.util.List;
  * @date 2019/12/4 11:18
  **/
 @Service
-public class TeacherStudentService {
+public class TeacherStudentService implements QueryService<TeacherStudent, Long> {
 
     @Autowired
     private StudentTeacherRepository repository;
@@ -27,7 +29,7 @@ public class TeacherStudentService {
     @Autowired
     private TeacherService teacherService;
 
-    public List<TeacherStudent> getAll() {
+    public List<TeacherStudentVO> getAll() {
         List<Student> allStudent = studentService.getAllStudent();
         List<Teacher> teachers = teacherService.getAll();
         teachers.forEach(teacher -> {
@@ -40,6 +42,18 @@ public class TeacherStudentService {
 
             });
         });
-        return repository.findAll();
+        List<TeacherStudent> teacherStudents = repository.findAll();
+        List<TeacherStudentVO> collect = teacherStudents.stream().map(this::entityToModel).collect(Collectors.toList());
+        return collect;
+    }
+
+
+    private TeacherStudentVO entityToModel(TeacherStudent teacherStudent) {
+        return new TeacherStudentVO().convertFrom(teacherStudent);
+    }
+
+    @Override
+    public TeacherStudent findById(Long id) {
+        return repository.getOne(id);
     }
 }
