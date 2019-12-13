@@ -11,3 +11,5 @@ insert into t_teacher (name, age,status, create_time, update_time) values ('李�
 insert into t_teacher (name, age,status, create_time, update_time) values ('王老师', 34,1, now(), now());
 insert into t_teacher (name, age,status, create_time, update_time) values ('刘老师', 54, 0,now(), now());
 insert into t_teacher (name, age,status, create_time, update_time) values ('陈老师', 41, 1,now(), now());
+
+insert into t_shop (shop_name,shop_total, create_time, update_time) values ('Java程序设计', 2, now(), now());

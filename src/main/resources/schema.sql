@@ -42,3 +42,12 @@ create table t_log(
     params VARCHAR(255) ,
     primary key (id)
 );
+
+create table t_shop(
+    id bigint auto_increment,
+    create_time timestamp ,
+    update_time timestamp,
+    shop_name varchar(255),
+    shop_total bigint,
+    primary key (id)
+);
