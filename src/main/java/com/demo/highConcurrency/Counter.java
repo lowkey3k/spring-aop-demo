@@ -2,6 +2,7 @@ package com.demo.highConcurrency;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -12,6 +13,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class Counter {
     private AtomicInteger atomicI = new AtomicInteger(0);
     private int i = 0;
+    private static Semaphore semaphore = new Semaphore(2);
 
     public static void main(String[] args) {
         final Counter cas = new Counter();

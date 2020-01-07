@@ -1,9 +1,8 @@
 package com.demo.model;
 
-import com.google.common.collect.Lists;
-
-import java.lang.reflect.Field;
-import java.util.List;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author LiHaitao
@@ -13,28 +12,59 @@ import java.util.List;
 
 public class Test extends Student {
 
+    private static volatile int count = 0;
 
-    public static void main(String[] args) {
-        Student student = new Student();
-        student.setAge(12);
-        student.setName("lihaitao");
-        Field[] fields = student.getClass().getDeclaredFields();
-        List<Field> fieldArrayList = Lists.newArrayList(fields);
-        Object a = 12;
-        fieldArrayList.forEach(field -> {
-            if (field.getName().equals("age")) {
-                try {
-                    field.setAccessible(true);
-                    field.set(student, (Number) a);
-                    Object o = field.get(student);
-                    System.out.println(o);
-                } catch (IllegalAccessException e) {
-                    e.printStackTrace();
+    public static void main(String[] args) throws InterruptedException {
+        ThreadPoolExecutor t = new ThreadPoolExecutor(2, 2,
+                3L, TimeUnit.DAYS, new LinkedBlockingQueue<Runnable>());
+        t.submit(new Runnable() {
+            @Override
+            public void run() {
+                getInstance().count();
+
+            }
+        });
+
+        t.submit(new Runnable() {
+            @Override
+            public void run() {
+                getInstance().count();
+
+            }
+        });
+
+        //
+        //        Thread thread = new Thread(() -> {
+        //        });
+        //        Thread thread2 = new Thread(() -> {
+        //            getInstance().count();
+        //        });
+        //        thread.start();
+        //        thread2.start();
+        //        thread.join();
+        //        thread2.join();
+        System.out.println(count);
+
+    }
+
+    static Test test;
+
+    static Test getInstance() {
+        if (test == null) {
+            synchronized (Test.class) {
+                if (test == null) {
+                    test = new Test();
                 }
             }
-
-            System.out.println(field.getName());
-        });
-        System.out.println(student);
+        }
+        return test;
     }
+
+    private void count() {
+        for (int i = 0; i < 10000; i++) {
+            count++;
+        }
+    }
+
+
 }
