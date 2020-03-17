@@ -4,7 +4,6 @@ import cn.hutool.core.collection.CollectionUtil;
 import com.demo.model.Shop;
 import com.demo.repository.ShopRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.redisson.api.RLock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,9 +21,9 @@ import java.util.List;
 @RequestMapping("/test")
 @Slf4j
 public class RedissonTestController {
-
-    @Autowired
-    private RLock lock;
+    //
+    //    @Autowired
+    //    private RLock lock;
 
 
     @Autowired
@@ -33,7 +32,7 @@ public class RedissonTestController {
 
     @GetMapping("/plus")
     public String plus(@RequestParam Integer sum) throws InterruptedException {
-        lock.lock();
+        //        lock.lock();
         //查看库存，确认库存是否充足保证下单可以成功
         Thread.sleep(5000);
         List<Shop> all = shopRepository.findAll();
@@ -48,7 +47,7 @@ public class RedissonTestController {
         } else {
             log.info("库存不够>>>>>>>>>>>{}", all.size());
         }
-        lock.unlock();
+        //        lock.unlock();
         return "success";
     }
 
