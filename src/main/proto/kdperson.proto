@@ -1,42 +1,42 @@
 syntax = "proto3";
 
-option java_package = "com.keda.viid.proto";
+option java_package = "com.kedacom.ctsp.cvf.viid.common.protobuf";
 
 import "kdsubimageinfo.proto";
 
-message KDPerson_Proto {
-    string PersonID = 1;
-    int64 InfoKind = 2;
-    string SourceID = 3;
-    string DeviceID = 4;
-    int64 ShotTime = 5;
-    int64 LocationMarkTime = 6;
-    int64 PersonAppearTime = 7;
-    int64 PersonDisAppearTime = 8;
-    int64 SourceType = 9;
-    string BestPersonImageID = 10;
-    string BestFaceImageID = 11;
-    string Extend1 = 12;
-    string Extend2 = 13;
-    repeated KDSubImageInfo_Proto KedaSubImageList = 14;
-    string AnalysisObjID = 15;
-    int64 LeftTopX = 16;
-    int64 LeftTopY = 17;
-    int64 RightBtmX = 18;
-    int64 RightBtmY = 19;
-    int64 EntryTime = 20;
-    string TabID = 21;
-    string CoatColor = 22;
-    string TrousersColor = 23;
-    int64 HasBag = 24;
-    int64 IsDrivingNonMotorVehicle = 25;
-    int64 HasHat = 26;
-    int64 HasMask = 27;
-    int64 HasGlass = 28;
-    string RaceCode = 29;
-    string GenderCode = 30;
-    int64 AgeLowerLimit = 31;
-    int64 AgeUpLimit = 32;
-    int64 FaceQuality = 33;
-    int64 KDExpiredDate = 34;
+message KDPerson_Proto{
+	string	PersonID = 1;
+	int64	InfoKind = 2;
+	string	SourceID = 3;
+	string	DeviceID = 4;
+	int64	ShotTime = 5;
+	int64	LocationMarkTime = 6;
+	int64	PersonAppearTime = 7;
+	int64	PersonDisAppearTime = 8;
+	int64	SourceType = 9;
+	string	BestPersonImageID = 10;
+	string	BestFaceImageID = 11;
+	string	Extend1 = 12;
+	string	Extend2 = 13;
+	repeated KDSubImageInfo_Proto	KedaSubImageList = 14;
+	string	AnalysisObjID = 15;
+	int64	LeftTopX = 16;
+	int64	LeftTopY = 17;
+	int64	RightBtmX = 18;
+	int64	RightBtmY = 19;
+	int64	EntryTime = 20;
+	string	TabID = 21;
+	string	CoatColor = 22;
+	string	TrousersColor = 23;
+	int64	HasBag = 24;
+	int64	IsDrivingNonMotorVehicle = 25;
+	int64	HasHat = 26;
+	int64	HasMask = 27;
+	int64	HasGlass = 28;
+	string	RaceCode = 29;
+	string	GenderCode = 30;
+	int64	AgeLowerLimit = 31;
+	int64	AgeUpLimit = 32;
+	int64	FaceQuality = 33;
+	int64	KDExpiredDate = 34;
 }

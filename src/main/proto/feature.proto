@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option java_package = "com.keda.viid.proto";
+option java_package = "com.kedacom.ctsp.cvf.viid.common.protobuf";
 
 
 message Feature_Proto{

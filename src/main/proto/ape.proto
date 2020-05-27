@@ -1,7 +1,7 @@
 syntax = "proto3";
 
-option java_package = "com.keda.viid.proto";
-option java_outer_classname="APEProtobuf";
+option java_package = "com.kedacom.ctsp.cvf.viid.common.protobuf";
+
 
 message APE_Proto{
 	string	ApeID = 1;

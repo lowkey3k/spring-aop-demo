@@ -14,10 +14,10 @@ public class CommonConfig {
     //    @Bean
     //    @ConditionalOnProperty(prefix = "redission", name = "enable", havingValue = "true", matchIfMissing = true)
     //    public RLock rLock() {
-    //        Config config = new Config();
-    //        config.setTransportMode(TransportMode.EPOLL);
-    //        config.useSingleServer().setAddress("redis://127.0.0.1:6379");
-    //        RedissonClient redisson = Redisson.create(config);
+    //        Config Config = new Config();
+    //        Config.setTransportMode(TransportMode.EPOLL);
+    //        Config.useSingleServer().setAddress("redis://127.0.0.1:6379");
+    //        RedissonClient redisson = Redisson.create(Config);
     //        return redisson.getLock("lock");
     //    }
 }

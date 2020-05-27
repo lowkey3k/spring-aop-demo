@@ -18,4 +18,8 @@ public interface A {
     Student modelToEntity(StudentVO studentVO);
 
     StudentVO covert(Student student);
+
+    static void get() {
+
+    }
 }

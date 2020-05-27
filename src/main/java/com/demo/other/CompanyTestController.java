@@ -18,9 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 public class CompanyTestController {
 
-    @PostMapping("/sync/data/unit")
+    @PostMapping(value = "/sync/data/unit")
     public JSONObject department(@RequestBody JSONObject jsonObject) {
-        log.info("request param>>>>{}");
+        log.info("request param>>>>{}", jsonObject);
         String str = "{\n" +
                 "\t\"dataList\":[{\n" +
                 "\t\t\t\"id\":\"110011123\",\n" +
